@@ -17,20 +17,18 @@
     --image: url(../images/cover-image-light.png);
     --title-color-text: #353430;
     --accent-text: #353430;
+    --opac: opacity: 70%;
 }
 
+.theme_light .header__rec::after {
+  display: none;
+}
+
+.theme_light .header__rec::before {
+  display: none;
+}
 
 @media (prefers-color-scheme: light) {
-  :root {
-    --accent-color: #FF0070;
-    --title-color: #FFC2E6;
-    --title-decor: #FF8DCB;
-    --triangle: #353430;
-    --background: #FFF1F7;
-    --image: url(../images/cover-image-light.png);
-    --title-color-text: #353430;
-    --accent-text: #353430;
-  }
   .header__rec::after {
     display: none;
   }

@@ -21,7 +21,13 @@
   --image: url(../images/cover-image-dark.png);
 }
 
+.theme_dark .header__rec::after {
+  display: block;
+}
 
+.theme_dark .header__rec::before {
+  display: block;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
