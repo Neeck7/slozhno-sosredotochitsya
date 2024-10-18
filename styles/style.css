@@ -19,7 +19,7 @@
 }
 
 .header {
-  /* min-height: 768px; */
+  min-height: 668px;
   height: 100vh;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
@@ -37,10 +37,8 @@
 .header__rec::after {
   content: 'rec';
   display: block;
-  width: 33px;
-  height: 26px;
   position: absolute;
-  color: var(--triangle);
+  color: rgb(var(--triangle));
   top: 0px;
   right: 30px;
   text-transform: uppercase;
@@ -56,11 +54,11 @@
   width: 9px;
   min-height: 9px;
   border-radius: 50%;
-  background-color: var(--triangle);
+  background-color: rgb(var(--triangle));
   position: absolute;
   top: 10px;
   right: 10px;
-  box-shadow: 0 0 4px 2px var(--triangle);
+  box-shadow: 0 0 4px 2px rgb(var(--triangle));
 }
 
 .decorated-zone:after {
@@ -71,8 +69,8 @@
   position: absolute;
   bottom: 20px;
   left: 20px;
-  border-bottom: 1px solid var(--triangle);
-  border-left: 1px solid var(--triangle);
+  border-bottom: 1px solid rgb(var(--triangle));
+  border-left: 1px solid rgb(var(--triangle));
 }
 
 .decorated-zone:before {
@@ -83,8 +81,8 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  border-top: 1px solid var(--triangle);
-  border-right: 1px solid var(--triangle);
+  border-top: 1px solid rgb(var(--triangle));
+  border-right: 1px solid rgb(var(--triangle));
 }
 
 .header__theme-menu {
@@ -98,10 +96,7 @@
   justify-content: center;
   align-items: flex-start;
   grid-template-columns: 70px 70px 70px;
-  grid-template-rows: 26px;
   gap: 10px;
-  
-
 }
 
 .header__theme-menu-item {
@@ -117,26 +112,26 @@
   font-family: IBM Plex Mono, sans-serif;
   font-size: 18px;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 26px;
   text-transform: lowercase;
   display: flex;
   justify-content: center;
-  color: var(--triangle);
+  color: rgb(var(--triangle));
 }
 
 .header__theme-menu-button:active {
   outline: 1px solid;
 }
 
-.header__theme-menu-button:focus {
-  text-decoration: underline;
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid rgb(var(--triangle));
   outline: none;
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid;
-  opacity: 40%;
+  outline: 1px solid rgb(var(--triangle));
   cursor: pointer;
+  color: rgba(var(--triangle), 0.4);
 }
 
 .header__theme-menu-button_active {
@@ -152,9 +147,10 @@
   font-weight: 700;
   line-height: 129.53px;
   height: 100%;
-  
   text-shadow: 4px 4px 0 var(--accent-color);
   color: var(--title-color);
+  position: relative;
+  right: 20px;
 }
 
 .header__text {
@@ -167,8 +163,7 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
-  text-align: left;
-  
+  text-align: left;  
   background-color: var(--title-decor);
   color: var(--title-decor-text);
 }
@@ -190,41 +185,43 @@
   position: relative;
 }
 
-.focus__title {
+.focus-content{
   font-family: IBM Plex Mono, sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
+}
+
+.focus-card{
+  display: grid;
+  row-gap: 10px;
+}
+
+.focus-card__title{
+  grid-row-start: 1;
+  grid-row-end: 3;
+  color: var(--title-color-text);
+  max-width: 649px;
+  width: 100%;
+  background-color: var(--title-decor);
+  color: var(--title-decor-text);
+  display: flex;
+  align-items: flex-start;
+}
+
+.focus-card__text{
+  font-weight: 400;
+  color: var(--accent-text);
+}
+
+.focus__title {
   grid-row-start: 1;
   grid-row-end: 3;
   color: var(--title-color-text);
 }
 
-.focus__text-title {
-  font-family: IBM Plex Mono, sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 23.4px;
-  max-width: 649px;
-  width: 100%;
-  max-height: 23px;
-  background-color: var(--title-decor);
-  color: var(--title-decor-text);
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 10px;
-}
-
-.focus__text {
-  font-family: IBM Plex Mono, sans-serif;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 23.4px;
-  color: var(--accent-text);
-}
-
 .text__link {
-  font-family: IBM Plex Mono;
+  font-family: IBM Plex Mono, sans-serif;
   font-size: 18px;
   font-weight: 400;
   line-height: 23.4px;
@@ -234,7 +231,7 @@
 }
 
 .text__link:hover {
-  text-decoration: underline;
+  border-bottom: 1px solid var(--accent-text);
 }
 
 .text__link:focus {
@@ -250,7 +247,7 @@
   width: 100%;
   position: relative;
   margin-top: 80px;
-
+ overflow: hidden;
 }
 
 .concentration__title {
@@ -264,34 +261,34 @@
 }
 
 .concentration-container {
-  display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
   height: 100%;
-  max-height: 431px;
   margin-top: 20px;
   row-gap: 10px;
   column-gap: 20px;
-  max-width: 315px;
+  display: grid;
+  grid-template-columns: repeat(3, 315px);
+  grid-auto-columns: 315px;
+}
+
+.concentration-card {
+  display: flex;
+  row-gap: 10px;
+  flex-direction: column;
 }
 
 .concentration-container__title {
   width: 100%;
-  height: 100%;
-  max-height: 23px;
   font-family: IBM Plex Mono, sans-serif;
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
   background-color: var(--title-decor);
   color: var(--title-decor-text);
-  margin-bottom: 10px;
 }
 
 .concentration-container__text {
   width: 100%;
-  
-  min-height: 398px;
   font-family: IBM Plex Mono, sans-serif;
   font-size: 18px;
   font-weight: 400;
@@ -326,7 +323,6 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
-  min-height: 23px;
   background-color: var(--title-decor);
   color: var(--title-decor-text);
 }
@@ -336,7 +332,6 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 23.4px;
-  min-height: 23px;
   margin-bottom: 10px;
   background-color: var(--title-decor);
   color: var(--title-decor-text);
@@ -376,46 +371,42 @@
   gap: 20px;
 }
 
-.gallery-container__sunset {
+.gallery-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
+  object-position: center
+}
+
+.gallery-container__sunset {
   grid-column: 1/3;
-  width: 649px;
-  height: 260px;
 }
 
 .gallery-container__ice-cream {
-  object-fit: cover;
   grid-column: 3/4;
-  grid-row: 1/2;
-  width: 315px;
-  height: 595px;
+  grid-row: 1/3;
 }
 
 .gallery-container__tape {
-  object-fit: cover;
   grid-column: 1/2;
-  grid-row: 2/3;
-  width: 315px;
-  height: 768px;
+  grid-row: 2/4;
 }
 
 .gallery-container__books {
-  object-fit: cover;
-  width: 315px;
-  height: 315px;
+  grid-column: 2/2;
+  grid-row: 2/2;
 }
 
 .gallery-container__street {
-  object-fit: cover;
-  width: 649px;
-  height: 428px;
   grid-column: 2/4;
+  grid-row: 3/3;
 }
 
 .footer {
   width: 100%;
   max-width: 1024px;
-  min-height: 768px;
+  min-height: 668px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -428,14 +419,11 @@
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-weight: 700;
   line-height: 129.53px;
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
   color: var(--title-color);
 }
 
 @media screen and (max-width:1023px) {
-  .header {
-    min-height: 1024px;
-  }
 
   .header__theme-menu {
     align-self: center;
@@ -444,26 +432,19 @@
 
   .header__theme-menu-list {
     grid-template-columns: 70px;
-    grid-template-rows: 26px 26px 26px;
-    
   }
 
   .header__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    font-weight: 700;
     line-height: 99px;
     text-align: left;
-    
   }
 
   .header__text {
     max-width: 364px;
-    
   }
 
   .focus {
     grid-template-columns: 236px 472px;
-   
   }
 
   .concentration {
@@ -475,16 +456,12 @@
   }
 
   .concentration-container {
-    max-height: 585px;
     flex-wrap: nowrap;
     max-width: 728px;
     gap: 0%;
-  }
-
-  .concentration-container__text {
-    margin-bottom: 20px;
-    min-height: 141px;
-    
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
   }
 
   .attention {
@@ -496,46 +473,12 @@
     grid-template-rows: 192px 230px 318px;
   }
 
-  .gallery-container__sunset {
-    grid-column: 1/3;
-    width: 479px;
-    height: 192px;
-  }
-
-  .gallery-container__ice-cream {
-    grid-column: 3/4;
-    grid-row: 1/2;
-    width: 229px;
-    height: 441px;
-  }
-
-  .gallery-container__tape {
-    grid-column: 1/2;
-    grid-row: 2/3;
-    width: 229px;
-    height: 568px;
-  }
-
-  .gallery-container__books {
-    width: 230px;
-    height: 230px;
-  }
-
-  .gallery-container__street {
-    width: 479px;
-    height: 318px;
-    grid-column: 2/4;
-  }
-
   .footer {
     max-width: 768px;
-    min-height: 1024px;
+    min-height: 668px;
   }
 
   .footer__text {
-    font-family: IBM Plex Mono, sans-serif;
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    font-weight: 700;
     line-height: 99px;
   }
 
@@ -543,7 +486,6 @@
 
 @media screen and (max-width:767px) {
   .header {
-    min-height: 668px;
     padding: 10px;
   }
 
@@ -572,29 +514,21 @@
     justify-self: flex-end;
   }
 
-  .header__theme-menu-list {
-    grid-template-columns: 70px;
-    grid-template-rows: 26px 26px 26px;
-
-  }
-
   .header__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    font-weight: 700;
     line-height: 95.7px;
     max-width: 355px;
     width: 100%;
     align-self: center;
+    position: static;
   }
 
   .header__text {
     max-width: 355px;
-    
     font-size: 18px;
     font-weight: 700;
     line-height: 23.4px;
     align-self: center;
-   
   }
 
   .focus {
@@ -618,15 +552,10 @@
   }
 
   .concentration-container {
-    max-height: 1052px;
     flex-wrap: nowrap;
     max-width: 355px;
     gap: 0%;
-  }
-
-  .concentration-container__text {
-    margin-bottom: 20px;
-    min-height: 281px
+    row-gap: 20px;
   }
 
   .attention {
@@ -636,10 +565,6 @@
 
   .attention__title {
     grid-row-end: 2;
-  }
-
-  .attention__title-decor {
-    min-height: 47px;
   }
 
   .gallery {
@@ -659,37 +584,7 @@
     width: 100%;
     gap: 10px;
   }
-
-  .gallery-container__sunset {
-    max-width: 355px;
-    width: 100%;
-    height: 142px;
-  }
-
-  .gallery-container__ice-cream {
-    max-width: 355px;
-    width: 100%;
-    height: 355px;
-  }
-
-  .gallery-container__tape {
-    max-width: 355px;
-    width: 100%;
-    height: 237px;
-  }
-
-  .gallery-container__books {
-    max-width: 355px;
-    width: 100%;
-    height: 355px;
-  }
-
-  .gallery-container__street {
-    max-width: 355px;
-    width: 100%;
-    height: 237px;
-  }
-
+  
   .footer {
     max-width: 375px;
     min-height: 668px;
@@ -697,9 +592,7 @@
   }
 
   .footer__text {
-    font-family: IBM Plex Mono, sans-serif;
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    font-weight: 700;
     line-height: 99px;
   }
 

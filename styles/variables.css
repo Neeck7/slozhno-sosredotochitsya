@@ -6,7 +6,8 @@
   --accent-color: #FF0070;   
     --title-color: #FFC2E6;
     --title-decor: #FF8DCB;
-    --triangle: #353430;
+    --triangle: 53, 52, 48;
     --background: #FFF1F7;
     --image: url(../images/cover-image-light.png);
+    --accent-text: #353430;
 }
