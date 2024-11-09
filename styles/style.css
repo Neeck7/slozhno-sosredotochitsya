@@ -212,12 +212,6 @@
   color: var(--accent-text);
 }
 
-.focus-card{
-  display: grid;
-  row-gap: 10px;
-  grid-column: 2/2;
-}
-
 .section {
   display: grid;
   row-gap: 20px;
@@ -282,12 +276,18 @@
   display: grid;
   grid-template-columns: repeat(3, 315px);
   grid-auto-columns: 315px;
+
+}
+
+.card{
+  display: grid;
+  row-gap: 10px;
+  grid-column: 2/2;
 }
 
 .concentration-card {
-  display: flex;
-  row-gap: 10px;
-  flex-direction: column;
+  align-content: flex-start;
+  grid-column: inherit;
 }
 
 .concentration-container__text {
@@ -319,7 +319,6 @@
 .attention__text-title {
   font-family: IBM Plex Mono, sans-serif;
   font-weight: 400;
-  margin-bottom: 10px;
 }
 
 .attention__text {
@@ -516,7 +515,7 @@
     grid-row-end: 1;
   }
 
-  .focus-card{
+  .card{
     grid-column: 1/1;
   }
 
