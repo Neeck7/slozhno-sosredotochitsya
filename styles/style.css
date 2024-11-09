@@ -389,7 +389,6 @@
 
 .footer {
   width: 100%;
-  max-width: 1024px;
   min-height: 668px;
   height: 100vh;
   display: flex;
@@ -451,10 +450,6 @@
 
   .gallery-container {
     grid-template-columns: minmax(229px, 1fr);
-  }
-
-  .footer {
-    max-width: 768px;
   }
 
   .footer__text {
@@ -551,7 +546,6 @@
   }
   
   .footer {
-    max-width: 375px;
     margin-top: 40px;
   }
 
